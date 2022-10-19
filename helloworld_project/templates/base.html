@@ -14,7 +14,10 @@
     </head>
     <body>
         <header>
-            <a href="{% url 'home' %}">HOME</a> | <a href="{% url 'about' %}">ABOUT</a> | <a href="{% url 'post_list' %}">POST</a>
+            | <a href="{% url 'home' %}">HOME</a> |
+            <a href="{% url 'about' %}">ABOUT</a> |
+            <a href="{% url 'post_list' %}">POST</a> |
+            <a href="{% url 'blog_home' %}">BLOG</a> |
         </header>
 
         {% block content %}
