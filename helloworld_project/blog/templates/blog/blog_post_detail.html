@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>{{ object.title }}</h1>
+{% load static %}
+<div>
+    <h2>{{ object.title }}</h2>
     <p>{{ object.content }}</p>
     <p>Published: {{ object.date_posted }}</p>
+</div>
+<a href="{% url 'blog_home' %}"><button>Back</button></a>
+<a href="{% url 'blog_post_edit' object.pk %}"><button>Edit</button></a>
+<a href="{% url 'blog_post_delete' object.pk %}"><button>Delete</button></a>
 {% endblock content %}

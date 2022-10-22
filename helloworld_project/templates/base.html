@@ -10,8 +10,9 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             {% bootstrap_css %}
             {% bootstrap_javascript %}
-            <link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
             <link rel="icon" href="{% static 'pages/images/favicon.ico' %}">
+            <link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
+            <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
         </head>
         <body>
             <header>
@@ -20,6 +21,12 @@
                 <a href="{% url 'post_list' %}">POST</a> |
                 <a href="{% url 'blog_home' %}">BLOG</a>
             </header>
+            {% if user.is_autheticated %}
+            <p>こんにちは、{{ user.username }}さん</p>
+            <a href="{% url 'logout' %}">ログアウト</a>
+            {% else %}
+            <a href="{% url 'login' %}">ログイン</a>
+            {% endif %}
 
             {% block content %}
             {% endblock content %}

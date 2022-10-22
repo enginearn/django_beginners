@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>New Blog Post</h2>
+    <!-- This form with ID name "postform" can be found below: -->
+    <!--<form action="/" method="POST">-->
+    <form action="" method="post">
+    <!-- This action="{{ url.get_content }}" will refer to the top-level name in my html file. It refers to the template matching this pattern within this html file's locations, where this template would be blog/tags/url.html. -->
+    	{% csrf_token %}
+    	{{ form.as_p }}
+    	<input type="submit" value="save">
+    </form>
+{% endblock content %}
